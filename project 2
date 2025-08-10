@@ -1,0 +1,21 @@
+# basic chatbot
+
+def bot(msg):
+    msg = msg.lower()
+    if msg == "hello":
+        return "Hi!"
+    elif msg == "how are you":
+        return "I'm fine, thanks!"
+    elif msg == "bye":
+        return "Goodbye!"
+    else:
+        return "Sorry, I don't know what you mean."
+
+print("Type hello, how are you, or bye")
+
+while True:
+    user = input("You: ")
+    ans = bot(user)
+    print("Bot:", ans)
+    if user.lower() == "bye":
+        break

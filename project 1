@@ -1,0 +1,42 @@
+import random
+
+fruits = ["apple", "banana", "orange", "grape", "kiwi", "strawberry", "watermelon", "pineapple", "blueberry", "mango", "pear", "peach", "plum", "cherry", "raspberry", "blackberry", "lemon", "lime", "coconut", "pomegranate", "apricot", "fig", "nectarine", "cranberry", "grapefruit", "tangerine", "lychee", "dragonfruit", "guava", "passionfruit", "melon", "persimmon", "kiwifruit", "cantaloupe", "honeydew", "date", "papaya", "jackfruit", "elderberry", "starfruit", "rhubarb", "boysenberry", "carambola", "kumquat", "soursop", "ackee", "breadfruit", "durian", "longan", "tamarind", "mulberry", "plantain", "quince", "uglifruit"]
+
+guess = random.choice(fruits)
+
+length = len(guess)
+
+list1 = []  # changed from list1=0 to list
+
+for i in range(length):
+    list1.append("-")
+
+print(list1)
+
+flag = 0
+n = 0
+
+while('-' in list1 and n != 6):
+    x = input("guess the alphabet ")
+
+    for i in range(length):
+        if guess[i] == x:
+            flag = 1
+            list1[i] = x
+
+    if(flag == 1):
+        print(list1)
+        print("correct")
+    if(flag == 0):
+        n += 1
+        print(list1)
+        print("incorrect")
+        print(f"you lose {n} life")
+
+    flag = 0
+
+if '-' in list1:
+    print(f"the correct answer was {guess}")
+    print("\nyou lose the game")
+else:
+    print("\nyou win the game")
